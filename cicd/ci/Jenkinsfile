@@ -154,6 +154,8 @@ pipeline {
             }
         }
 
+    }
+
     post {
         always {
             echo 'Clean up workspace after build'
