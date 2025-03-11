@@ -23,9 +23,9 @@ class ExchangeRatesServiceTest {
     private ExchangeRatesService exchangeRatesService;
 
     @Test
-    public void should_return_exchange_rate() throws InterruptedException {
+    public void should_return_exchange_rate() {
         // Arrange
-        Thread.sleep(1);
+        //Thread.sleep(1);
 
         String baseCurrency = "USD";
         ExchangeRate expectedExchangeRate = getExchangeRate();
