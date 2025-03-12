@@ -17,6 +17,7 @@ public class ExchangeRatesController {
 
     @GetMapping("/latest/{currency}")
     public ExchangeRate getData(@PathVariable String currency) {
+
         return exchangeRatesService.getExchangeRate(currency);
     }
 
