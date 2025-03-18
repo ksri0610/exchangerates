@@ -1,11 +1,11 @@
 # Build an automated CICD pipeline using Jenkins and ArgoCD 
 
 ## Following is the list of videos for the jenkins CICD tutorials
-- [Introduction]()
-- [Step 1 : Develop multi-module project]()
-- [Step 2 : Setup Jenkins & SonarQube server]()
-- [Step 3 : Create Jenkins pipeline]()
-- [Step 4 : ArgoCD Setup]()
+- [Introduction](https://youtu.be/KJNGXZOfCmo)
+- [Step 1 : Develop multi-module project](https://youtu.be/3BeLrFj4K6U)
+- [Step 2 : Setup Jenkins & SonarQube server](https://youtu.be/ni8IIh4MxVk)
+- [Step 3 : Create Jenkins pipeline](https://youtu.be/XqSSil-mvN8)
+- [Step 4 : ArgoCD Setup](https://youtu.be/e411eouHAbQ)
 
 This project, demonstrates how to build an automated CI/CD pipeline using Jenkins and ArgoCD for a Spring Boot project. It covers setting up Jenkins for CI, containerizing the app with Docker, and using ArgoCD for automated deployment to Kubernetes.
 
