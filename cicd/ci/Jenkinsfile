@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GITHUB_CREDENTIALS_ID = 'github-token'
-        REPO_URL = 'https://github.com/kodedge-swapneel/exchangerates.git'
+        REPO_URL = 'https://github.com/ksri0610/exchangerates.git'
         SONAR_AUTH_TOKEN = credentials('sonarqube')
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
         IMAGE_NAME = 'kodedge/exchangerates'
@@ -169,8 +169,8 @@ pipeline {
                         gitUsernamePassword(credentialsId: GITHUB_CREDENTIALS_ID, gitToolName: 'Default')
                     ]) {
                         sh """
-                             git config user.email "kodedge-bot-ci@kodedge.com"
-                             git config user.name "kodedge-bot-ci"
+                             git config user.email "ksri0610@gmail.com"
+                             git config user.name "ksri0610"
                              git add k8chart/values.yaml
                              git commit -m "Update image tag to version ${imageTag}"
                              git push origin main
