@@ -8,11 +8,9 @@ pipeline {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials' 
         IMAGE_NAME = 'kodedge/exchangerates'
 
-        //following is not required. You can skip.
+        // Following is not required. You can skip.
         GRADLE_HOME = '/opt/gradle'
         PATH = "$GRADLE_HOME/bin:$PATH"
-
-
     }
 
     stages {
@@ -61,7 +59,7 @@ pipeline {
             steps {
                 script {
                     withSonarQubeEnv('SonarQube') {
-                        sh './gradlew sonar -Dsonar.login=$SONAR_AUTH_TOKEN'
+                        sh "./gradlew sonar -Dsonar.host.url=${env.SONAR_HOST_URL} -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
                     }
 
                     def qualityGate = waitForQualityGate()
@@ -148,7 +146,6 @@ pipeline {
                     } else {
                         error 'Health check failed: Application is not healthy.'
                     }
-
                 }
             }
         }
@@ -158,7 +155,7 @@ pipeline {
                 script {
                     def imageTag = env.COMMIT_HASH
 
-                     sh 'git checkout main'
+                    sh 'git checkout main'
 
                     // Use 'sed' to replace the image tag in values.yaml
                     sh """
@@ -169,11 +166,11 @@ pipeline {
                         gitUsernamePassword(credentialsId: GITHUB_CREDENTIALS_ID, gitToolName: 'Default')
                     ]) {
                         sh """
-                             git config user.email "ksri0610@gmail.com"
-                             git config user.name "ksri0610"
-                             git add k8chart/values.yaml
-                             git commit -m "Update image tag to version ${imageTag}"
-                             git push origin main
+                            git config user.email "ksri0610@gmail.com"
+                            git config user.name "ksri0610"
+                            git add k8chart/values.yaml
+                            git commit -m "Update image tag to version ${imageTag}"
+                            git push origin main
                         """
                     }
                 }
