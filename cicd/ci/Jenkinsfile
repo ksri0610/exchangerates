@@ -5,7 +5,6 @@ pipeline {
         GITHUB_CREDENTIALS_ID = 'github-token'
         REPO_URL = 'https://github.com/ksri0610/exchangerates.git'
         SONAR_AUTH_TOKEN = credentials('sonarqube')
-        SONAR_HOST_URL = 'http://host.docker.internal:9001' 
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials' 
         IMAGE_NAME = 'kodedge/exchangerates'
 
